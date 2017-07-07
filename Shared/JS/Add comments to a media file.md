@@ -5,7 +5,7 @@
 - It is simple to link an ULAPPH Cloud Desktop file so it will have a comments capability as long as it is TDSMEDIA, TDSSLIDE or TDSARTL format.
 - Before a user can comment, it will first go through reCaptcha verification:
 
-[http://your-ulapph-cloud-desktop.appspot.com/captcha?CC_FUNC=DISP&R=COMMENT&SID=TDSMEDIA-3&TITLE=ULAPPH Portal Website](http://your-ulapph-cloud-desktop.appspot.com/captcha?CC_FUNC=DISP&R=COMMENT&SID=TDSMEDIA-3&TITLE=ULAPPH%20Portal%20Website)
+[http://www.ulapph.com/captcha?CC_FUNC=DISP&R=COMMENT&SID=TDSMEDIA-3&TITLE=ULAPPH Portal Website](http://www.ulapph.com/captcha?CC_FUNC=DISP&R=COMMENT&SID=TDSMEDIA-3&TITLE=ULAPPH%20Portal%20Website)
 
 
 ## Header codes to be placed inside the <head> section
