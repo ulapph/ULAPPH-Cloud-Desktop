@@ -1,15 +1,9 @@
-# ULAPPH-Cloud-Desktop (INSTALLER)
+# ULAPPH-Cloud-Desktop (Source Codes)
 ULAPPH Cloud Desktop - A webtop for online work, publishing, and development!
 
 ![enter image description here](http://opo.ulapph.com/img/ulapph-logo.png)
 
 Welcome to ULAPPH Cloud Desktop! Your online cloud desktop and cloud website!  It runs on your browser! https://goo.gl/8PJbT8
-
-# Explore Start Menu
-https://ulapph-public-1.appspot.com/media?FUNC_CODE=GET_MEDIA&MEDIA_ID=1099&SID=TDSMEDIA-1099
-
-# Videos
-https://www.youtube.com/watch?list=PLHGslGB8z3_kDrebayoNNLc7VnXVfjuRZ&v=ih0ztWZg5R0
 
 # Screenshots
 
@@ -28,13 +22,6 @@ https://www.youtube.com/watch?list=PLHGslGB8z3_kDrebayoNNLc7VnXVfjuRZ&v=ih0ztWZg
 ![enter image description here](http://lh3.googleusercontent.com/kQmUemekPYZJFlMW4HSLxNuZp8SAn4xNo8PE5bLoixb7tVZ1gHEZWugRnXGErGL2iniQvY6GuIT-zziTsOVW7wltg2eeeISX9w=s800)
 
 ![enter image description here](https://lh3.googleusercontent.com/UQnbRGKWY9shokrD2Ha5eUNcrWGJ8JuE_TtNcY7B5_o5hytl0s7MOWp2M5Zc08vd9wrwxjNBEWm8pqEVSZiYS5Yw39W0fYQp=s800)
-
-# Try our Demo
-[Try ULAPPH Cloud Desktop as Guest](https://ulapph-public-1.appspot.com/?q=login&LFUNC=guest&TARGET_URL=/login)
-
-[Try ULAPPH Cloud Desktop as Registered User](https://ulapph-public-1.appspot.com/?q=login&LFUNC=GOOGLE&TARGET_URL=/login?continue=/uwm)
-
-[Try ULAPPH Cloud Desktop Website](https://ulapph-public-1.appspot.com/contents?q=home)
 
 # Features
 Below are main features of the ULAPPH Cloud Desktop. You can [click here](https://goo.gl/J7wZ92) to view screenshots of the latest features.
@@ -96,17 +83,3 @@ Desktop - no access, search or activity logs are retained!
 # Setup
 ![enter image description here](http://lh3.googleusercontent.com/T0v_elAC2F2yFjCQbDP88Nv0cktt7XLML7eOnoToRSwPxzD97EGbEFupWkva4rIwfi5Cw7AmU7Ozd6D4qgFU7z3To0vZZOI=s800)
 
-# To point your Start Menu to Github
-Go to Admin Setup, edit your System Top List Menu to include the line below on the very first line:
-
-    #GET_REMOTE_DATA: https://raw.githubusercontent.com/edwindvinas/ULAPPH-Cloud-Desktop/master/ULAPPH%20Cloud%20Desktop%20System%20Start%20Menu
-
-This will make sure your Start Menu gets the latest from Github.
-
-# To create a generic autocomplete list
-
-For site guests or when Start Menu cannot be fetched, point GITURL_AUTOCOMP_LIST to an autocomplete list in Github.
-
-    GITURL_AUTOCOMP_LIST    https://raw.githubusercontent.com/edwindvinas/ULAPPH-Cloud-Desktop/master/AUTOCOMPLETE/general
-
-If you want to refer to a different link, inform the administrator so we can update your installation.
