@@ -1,0 +1,3068 @@
+ULAPPH Cloud Desktop Documentation
+12 Jan 2018
+
+ULAPPH Cloud Desktop
+https://github.com/accenture/ulapph-cloud-desktop
+edwin.d.vinas@ gmail.com
+
+
+* func init() {
+
+
+///////////////////////////////////////////////////////////////
+// INIT / HANDLERS
+///////////////////////////////////////////////////////////////
+// define URL handlers for Google App Engine
+// these handlers have corresponding entries in the app.yaml
+
+* func root(w http.ResponseWriter, r *http.Request) {
+
+
+//main entry to clouddesktop
+//when the https://your-project.appspot.com/ url is accessed, this function is called		
+
+* func delaySecond(n time.Duration) {
+
+
+// delay in seconds
+// execute a delay in x seconds
+
+* func getKeyChannel(c appengine.Context, ChanID string) *datastore.Key {
+
+
+//get channel key given the channel ID
+//used by Firebase channel
+
+* func getHomeStatsNums(w http.ResponseWriter, r *http.Request, TARGET, NAME, div string) (m MyBox) {
+
+
+//gets the echarts statistics
+
+* func getHomeStats(w http.ResponseWriter, r *http.Request) (OnlineUsers int,
+
+
+//gets the most recent, os, browser stats
+
+* func createChannel(w http.ResponseWriter, r *http.Request) {
+
+
+//create channel
+// create a channel
+
+* func createToken(w http.ResponseWriter, r *http.Request, ChanID, recType string) (uid string, token string){
+
+
+//create token
+// create a token
+
+* func createTokenChan(w http.ResponseWriter, r *http.Request, thisChan chan Token, chanDone chan bool, ChanID, recType string) {
+
+
+//create token (channel logic)
+// create a token with channel method
+
+* func newChannelPut(w http.ResponseWriter, r *http.Request, ChanID string, uid string, isDesktopClient bool, recType string) (tokNew string) {
+
+
+//saves new channel id for the user
+// save a channel for the user
+
+* func checkPersonalAuthor(w http.ResponseWriter, r *http.Request, AUTHOR, SID string, MEDIA_ID int) (isOk bool) {
+
+
+//check if user is personal author of SID
+
+* func TDSARTL_Cacher(w http.ResponseWriter, r *http.Request, DOC_ID int, blobkey, DOC_STAT, FL_SHARED, UID, FL_COUNTRY_SPECIFIC, TITLE, TAGS, SHARED_TO string, MUSIC_ID int) {
+
+
+//caches article details
+// cache a single database record using memcache		
+
+* func TDSSLIDE_Cacher(w http.ResponseWriter, r *http.Request, DOC_ID int, blobkey, DOC_STAT, FL_SHARED, UID, FL_COUNTRY_SPECIFIC, TITLE, TAGS, SHARED_TO string, MUSIC_ID int, GET_NEXT string) {
+
+- No comments
+
+* func checkError(w http.ResponseWriter, r *http.Request, ERR_DATA error, EH_FUNC string) {
+
+
+//analyze eror to check over quota
+
+* func stripchars(str, chr string) string {
+
+
+//sample use
+//stripchars("She was a soul stripper. She took my heart!","aei")
+// strip given chars from a string
+
+* func API_goplus(w http.ResponseWriter, r *http.Request) {
+
+
+// gopher is an HTTP handler that searches Google+ for an activity
+// with a Gopher photo and redirects to the image thumbnail.
+
+* func channelMessageHandler(w http.ResponseWriter, r *http.Request) {
+
+
+//send data to channel
+
+* func sendChannelMessage(w http.ResponseWriter, r *http.Request, recID string, msg string) {
+
+- No comments
+
+* func sendChatPublic(w http.ResponseWriter, r *http.Request, mode, pubRoomID string, msg string) {
+
+- No comments
+
+* func sendChatPrivate(w http.ResponseWriter, r *http.Request, roomID string, msg string) {
+
+- No comments
+
+* //func sendChannelFirebase(w http.ResponseWriter, r *http.Request, chanID, recID, token string, payload []byte) {
+
+- No comments
+
+* func sendChannelFirebase(w http.ResponseWriter, r *http.Request, topic string, payload []byte) {
+
+
+//func sendChannelFirebase(w http.ResponseWriter, r *http.Request, chanID, recID, token string, payload []byte) {
+
+* func sendMessage(w http.ResponseWriter, r *http.Request, UID string, MSG_FUNC string, CUST_MSG string, FROM, mapURL, SID string) {
+
+
+//send message to channel
+//when there are new GB messages
+
+* func registration(w http.ResponseWriter, r *http.Request) {
+
+- No comments
+
+* func sysmsg(w http.ResponseWriter, r *http.Request) {
+
+- No comments
+
+* func invitation(w http.ResponseWriter, r *http.Request) {
+
+- No comments
+
+* func advertisement(w http.ResponseWriter, r *http.Request) {
+
+- No comments
+
+* func contactUs(w http.ResponseWriter, r *http.Request) {
+
+- No comments
+
+* func login(w http.ResponseWriter, r *http.Request) {
+
+- No comments
+
+* func displayBasicCharts(w http.ResponseWriter, r *http.Request, isWidget bool) {
+
+- No comments
+
+* //func displayBasicCharts(w io.Writer, r *http.Request, isWidget bool) {
+
+- No comments
+
+* func displayOauthIcons(w http.ResponseWriter, r *http.Request, TARGET_URL, lref string) {
+
+- No comments
+
+* func ulapphGo(w http.ResponseWriter, r *http.Request) {
+
+
+//D0037
+//Executes content as template
+
+* func ulapphMobile(w http.ResponseWriter, r *http.Request) {
+
+- No comments
+
+* func logout(w http.ResponseWriter, r *http.Request) {
+
+- No comments
+
+* func displayMOTD(w http.ResponseWriter, r *http.Request, deskName string) {
+
+- No comments
+
+* func displayCurrAccLog(w http.ResponseWriter, r *http.Request) {
+
+- No comments
+
+* func displaySocialSites(w http.ResponseWriter, r *http.Request) {
+
+
+//contentsAll
+
+* func checkSession(w http.ResponseWriter, r *http.Request) (FL_OU_USER bool, uid string) {
+
+- No comments
+
+* func isLoggedIn(w http.ResponseWriter, r *http.Request) (FL_LOGGED_IN bool) {
+
+- No comments
+
+* func promptLogin(w http.ResponseWriter, r *http.Request, LFUNC string) {
+
+- No comments
+
+* func displayEcharts(w http.ResponseWriter, r *http.Request, TARGET, NAME, div string) {
+
+
+//displays eCharts for the different stats
+
+* func displayEchartsBar(w http.ResponseWriter, r *http.Request, TARGET, NAME, div string) {
+
+
+//displays eCharts Bar charts
+
+* func saveAutoCompsBlob(w http.ResponseWriter, r *http.Request, uid string, acb []byte) {
+
+
+//saves a cache of the ACB data
+
+* func loginGoogle(w http.ResponseWriter, r *http.Request, urlStr string) {
+
+
+//redirects to Google login
+
+* func isIpAddressBlocked(w http.ResponseWriter, r *http.Request, ip string) (IS_BLOCKED bool) {
+
+
+//checks if IP address is blocked
+
+* func blockIP(w http.ResponseWriter, r *http.Request,ip, mode string) {
+
+
+//blocks an IP address
+
+* func unBlockIP(w http.ResponseWriter, r *http.Request,ip,mode string) {
+
+
+//unblocks an IP address
+
+* func isAdmin(w http.ResponseWriter, r *http.Request) bool {
+
+
+//check is user is an Admin
+
+* func adminSetup(w http.ResponseWriter, r *http.Request) {
+
+
+//handles the /admin-setup page whic contains Admin maintainance
+//only accessible via admin of the appengine itself
+
+* func printIndex(w http.ResponseWriter, r *http.Request, IDX_TARGET string, IDX_KEY string) {
+
+- No comments
+
+* func webtop(w http.ResponseWriter, r *http.Request, aUser string, tUser string, tok, targetURL, mode, SID, TITLE string) {
+
+- No comments
+
+* func uwm(w http.ResponseWriter, r *http.Request) {
+
+
+//main function which handles /uwm url
+//it basically outputs the main desktop UI and the sub-desktops up to 1000
+
+* func desktops(w http.ResponseWriter, r *http.Request) {
+
+
+//list all desktops
+
+* func desktop0(w http.ResponseWriter, r *http.Request) {
+
+
+//user personal desktop
+
+* func desktop(w http.ResponseWriter, r *http.Request) {
+
+
+//main function which handles the /desktop url
+//it displays the desktop and sub-desktops
+//note that uwm and desktop are different UIs
+//the desktop is the one that contains animated toolbars below similar to macOS
+
+* func genProcAccess(w http.ResponseWriter, r *http.Request, uid, deskName string) (FL_VALID_USER, FL_FOUND_RULE bool, PROC_ERR_MSG, dispType, AdsID string, ruleNum int, xRegion, xCity, nameb, versionb, DestURL, TrigID string) {
+
+
+//this is a function for validating user access
+//note that the logic here is old and this is my code when i was starting golang; see how I created the struct using buffer
+//we can improve this code by passing an actual struct populated the modern way
+
+* func checkSysIns(w http.ResponseWriter, r *http.Request) {
+
+
+//checks if the system is a new installation
+//if it is, it redirects to an installer page
+
+* func promptRegister(w http.ResponseWriter, r *http.Request, uid string, xCountry, provider, avatar, email string) {
+
+
+//prompts user to register	
+
+* func getAccessString(w http.ResponseWriter, r *http.Request, mode string) (viaStr string) {
+
+
+//concatenates the access string composed of platform, browser, ip address, operating system
+//used by logger to know who is accessing the system
+
+* func getGeoString(w http.ResponseWriter, r *http.Request) (geoStr string) {
+
+
+//gets the country, region and city details of the user accessing the system
+//it uses the default data being passed by GAE for each http request
+
+* func getCountry(w http.ResponseWriter, r *http.Request) (geoCountry string) {
+
+
+//gets the country for the given http request
+//it uses the default data being passed by GAE for each http request
+
+* func getUWMSource(w http.ResponseWriter, r *http.Request, uid, unum string) (sid string) {
+
+
+//gets the SID (TDSMEDIA-nn) where the UWM settings for the given UWM is stored
+//this returns the SID only
+
+* func getTopicsSource(w http.ResponseWriter, r *http.Request, uid, unum string) (sid string) {
+
+
+//gets the SID (TDSMEDIA-nn) where the Topics settings for the given UWM is stored
+//this returns the SID only
+
+* func getPersonalWindows(w http.ResponseWriter, r *http.Request, uid, alFlag, SID string) {
+
+
+//displays the personal UWM settings
+
+* func getTDSCNFG(w http.ResponseWriter, r *http.Request, vtype int, cfgName string) (tval string, nval int) {
+
+
+//gets the TDSCNFG config given type and config name
+
+* func getContactsList(w http.ResponseWriter, r *http.Request, uid, mode string) (resp string) {
+
+
+//gets the contacts list for the given user
+
+* func getPubWpList(w http.ResponseWriter, r *http.Request, uid string) (wpList string) {
+
+
+//gets the public wallpaper list
+
+* func getPubUWM(w http.ResponseWriter, r *http.Request) (uwmData string) {
+
+
+//gets the public UWM settings
+
+* func showHomeGallery(w http.ResponseWriter, r *http.Request) {
+
+
+//displays the home using a gallery format
+
+* func checkHomepageSettings(w http.ResponseWriter, r *http.Request, redirectURL string) {
+
+
+//checks any homepage settings if any custom theme is to be used
+
+* func getWallHosts(w http.ResponseWriter, r *http.Request) string {
+
+
+//gets hosts available which can be used to wall copy
+
+* func putSearchIndexS(w http.ResponseWriter, r *http.Request, indexName string, thisIdxKey string, slideIdx *IDX_TDSSLIDE) {
+
+
+//put search index for slides
+
+* func putSearchIndexA(w http.ResponseWriter, r *http.Request, indexName string, thisIdxKey string, slideIdx *IDX_TDSARTL) {
+
+
+//put search index for articles
+
+* func putSearchIndexM(w http.ResponseWriter, r *http.Request, indexName string, thisIdxKey string, slideIdx *IDX_TDSMEDIA) {
+
+
+//put search index for media
+
+* func putSearchIndexI(w http.ResponseWriter, r *http.Request, indexName string, thisIdxKey string, slideIdx *IDX_TDSICONS) {
+
+
+//put search index for icons
+
+* func putSearchIndexF(w http.ResponseWriter, r *http.Request, indexName string, thisIdxKey string, slideIdx *IDX_FORSALE) {
+
+
+//put search index for items for sale
+
+* func putSearchIndexB(w http.ResponseWriter, r *http.Request, indexName string, thisIdxKey string, slideIdx *IDX_WTBUY) {
+
+
+//put search index for items for wat to buy
+
+* func putSearchIndexP(w http.ResponseWriter, r *http.Request, indexName string, thisIdxKey string, slideIdx *IDX_TDSPROF) {
+
+
+//put search index for items for profiles
+
+* func ulapphWall(w http.ResponseWriter, r *http.Request) {
+
+
+//function which serves the /wall url
+//used for sending messages or copying files via wall
+
+* func contentsAll(w http.ResponseWriter, r *http.Request) {
+
+
+//function to handle the /contents url
+//it automatically handle the display of the website contents	
+
+* func dummyCmd(w http.ResponseWriter, r *http.Request, uid string) {
+
+
+//a bug workaround to override last message
+
+* func showPersonalMenuMobile(w http.ResponseWriter, r *http.Request, uid string) {
+
+
+//shows personal menu in mobile
+
+* func parseAutocompEntries(w http.ResponseWriter, r *http.Request) {
+
+
+//parses the cached ACB entries
+
+* func autoSearchIndex(w http.ResponseWriter, r *http.Request, IDX_TARGET string, FL_VALID_USER bool) string {
+
+
+//search engine for articles, slides and media files
+
+* func showTopListMenu(w http.ResponseWriter, r *http.Request, mode string) {
+
+
+//shows the system top list menu based on the entries found in the media file
+
+* func showLeftMenu(w http.ResponseWriter, r *http.Request) {
+
+
+//shows the left menu of the website
+
+* func getCategories(w http.ResponseWriter, r *http.Request) {
+
+
+//gets the categories list from media file
+//connected to how the all desktops are listed
+
+* func ulapphCache(w http.ResponseWriter, r *http.Request) {
+
+
+//handles the /cache url
+//used for caching using app cache
+
+* func SENDSYSMSG(c appengine.Context, SYSMAIL, SYSMSGS, UID string) string {
+
+
+//sends a system message via email
+
+* func SENDINVITE(c appengine.Context, desktop, uid, inviteEmail string) string {
+
+
+//sends an invite via email
+
+* func SENDADSEVENT(c appengine.Context, ToEmail, Message, uid string) string {
+
+
+//sends ads event via email
+
+* func SENDGENEMAIL(c appengine.Context, SUBJECT, TO, FROM, MESSAGE string) string {
+
+
+//sends a generic email
+
+* func SENDREPORTS(c appengine.Context, SUBJECT, TO, FROM, MESSAGE string) string {
+
+
+//sends reports via email
+
+* func SENDSHARED0MAIL(c appengine.Context, TO, FROM, MESSAGE string) string {
+
+
+//sends email about a shared desktop0
+
+* func SENDINQUIRY(c appengine.Context, desktop, uid, inquireEmail, contactNum, message string) string {
+
+
+//sends an inquiry via email
+
+* func SENDADSINQ(c appengine.Context, desktop, uid, inquireEmail, contactNum, message string) string {
+
+
+//sends an ads inquiry via email
+
+* func SENDFEEDBACK(c appengine.Context, fbType, desktop, uid, inquireEmail, contactNum, message string) string {
+
+
+//sends feedback via email
+
+* func settings(w http.ResponseWriter, r *http.Request) {
+
+
+//handles the /settings url for handling settings and configuratios of desktops
+
+* func ranConGen(w http.ResponseWriter, r *http.Request) {
+
+
+//generate random contents which displays random tips inside the desktop
+
+* func ulapphChat(w http.ResponseWriter, r *http.Request) {
+
+
+//handles the /chat url which makes the firebase chat possible
+
+* func ulapphChatSender(w http.ResponseWriter, r *http.Request, UC_FUNC string, MSG, roomID string) {
+
+
+//sends chat messages given the message and target roomID in firebase
+
+* func ulapphLocal(w http.ResponseWriter, r *http.Request) {
+
+
+//saved data to browser local storage
+
+* func encode(bin []byte) []byte {
+
+
+// encode is our main function for
+// base64 encoding a passed []byte
+
+* func format(enc []byte, mime string) string {
+
+
+// format is an abstraction of the mime switch to create the
+// acceptable base64 string needed for browsers.
+
+* func ulapphCaptcha(w http.ResponseWriter, r *http.Request) {
+
+
+//handles the recaptcha processing
+
+* func RedirCaptcha(w http.ResponseWriter, r *http.Request) {
+
+
+//handles redirection of recaptcha
+
+* func VerifyCaptcha(w http.ResponseWriter, r *http.Request) (valid bool, err error) {
+
+
+//handles recaptch verification
+
+* func ulapphStream(w http.ResponseWriter, r *http.Request) {
+
+
+//stream alerts, notifications, events
+
+* func procAuthFirebase(w http.ResponseWriter, r *http.Request, thisChan chan string, chanDone chan bool, uid, token string) {
+
+
+//proc auth firebase to get the jwt token
+
+* func readSecret(w http.ResponseWriter, r *http.Request) {
+
+
+//read secret for the firebase json configurations
+
+* func createFirebaseToken(u *User) *jwt.Token {
+
+
+//creates a JWT token for firebase
+
+* func ulapphStore(w http.ResponseWriter, r *http.Request) {
+
+
+//handles the /store url designed to handle store payments
+
+* func registerAccessCode(w http.ResponseWriter, r *http.Request, SID, accessCode string) {
+
+
+//registers an access code for the given content
+
+* func ulapphDirectory(w http.ResponseWriter, r *http.Request) {
+
+
+//handles directory listing for people, sites etc
+
+* func editor(w http.ResponseWriter, r *http.Request) {
+
+
+//editor for slides and articles
+//it uses Ace editor customized for ulapph cloud desktop
+
+* func printSemaFooter(w http.ResponseWriter, r *http.Request) {
+
+
+//prints semaphore footer
+
+* func ranAdsGen(w http.ResponseWriter, r *http.Request) {
+
+
+//generate adverts (iframe)
+
+* func getRanAnim() (textEff, imgEff string) {
+
+
+//generates random animations via css
+
+* func commonTools(w http.ResponseWriter, r *http.Request, uid, FORMAT, SID, uReferer string) {
+
+
+//displays common tools
+
+* func ulapphCommands(w http.ResponseWriter, r *http.Request) {
+
+
+//handles /comands url
+//accepts special API commands
+
+* func scraper(w http.ResponseWriter, r *http.Request,uid,url,sel,img,lnk,txt,tlen string) string {
+
+
+//function which can scrape webpages
+
+* func scraperAlertify(w http.ResponseWriter, r *http.Request,uid,url,sel,img,lnk,txt,tlen string) {
+
+
+//handles notifications for scraped websites
+
+* func scraperJson(w http.ResponseWriter, r *http.Request,uid,url,sel,img,lnk,txt,tlen, itxt string) {
+
+
+//scrapes websites and returns json
+
+* func resolveURL(urlm, link string) string {
+
+
+// returns complete url
+
+* func getSentence(txt string) (s1 string) {
+
+
+//gets sentences given a string or paragraph
+
+* func ulapphTools(w http.ResponseWriter, r *http.Request) {
+
+
+//handles /tools url which handles the different tools
+
+* func listAllDesktops(w http.ResponseWriter, r *http.Request, uid string) {
+
+
+//function to handle listing of all desktops using JSON formatand rendering library
+//given the JSON list of all desktops, a tabular view is generated in the browser
+
+* func listAllIcons(w http.ResponseWriter, r *http.Request, uid string) {
+
+
+//function to handle listing of all icons using JSON formatand rendering library
+//given the JSON list of all icons, a tabular view is generated in the browser
+
+* /* func listAllIcons(w http.ResponseWriter, r *http.Request, uid string) []byte {
+
+
+//function handle listing of all icons
+
+* func getRandomColors() (color1, color2, color3 string) {
+
+
+//function generate random colors
+
+* func ulapphSearch(w http.ResponseWriter, r *http.Request) {
+
+
+//function to handle /search
+//it process in site or extended multiple sites search
+
+* func bleveSearch(w http.ResponseWriter, r *http.Request, uid, IDX_TARGET, SID, SEARCH_KEY string) {
+
+
+//handles bleve search which is capable of searching inside a document line by line
+
+* func bleveSearchOut(w http.ResponseWriter, r *http.Request, uid, IDX_TARGET, SID, SEARCH_KEY, TITLE, DESC, URL string, searchResults interface{}) {
+
+
+//handles blevesearch output
+
+* func isBot(w http.ResponseWriter, r *http.Request) (FL_IS_BOT bool) {
+
+
+//determine if the http request is from a bot
+
+* func checkDesktop(w http.ResponseWriter, r *http.Request) (FL_DESKTOP bool) {
+
+
+//checks http request is from a desktop
+
+* func checkMobile(w http.ResponseWriter, r *http.Request) (FL_MOBILE bool) {
+
+
+//checks http request is from a mobile
+
+* func checkSlidable(w http.ResponseWriter, r *http.Request) (FL_DESKTOP bool) {
+
+
+//checks if the browser is capable of handling slides format
+
+* func searchIndex(w http.ResponseWriter, r *http.Request, searchChan chan []byte, SEARCH_FUNC string, IDX_TARGET string, SEARCH_KEY string, recCtr int, ITEM_TYPE, sec string) {
+
+
+//search the slides, articles, media index files
+//it uses google appengine search api to index and search documents
+
+* func searchSchemeHandler(w http.ResponseWriter, r *http.Request, turl, sec string) string {
+
+
+//handles search schemes to determine if http or https
+
+* func people(w http.ResponseWriter, r *http.Request) {
+
+
+//handles /people url
+
+* func infodb(w http.ResponseWriter, r *http.Request) {
+
+
+//handles/infodb handler
+//used for viewing articles, slides or media index
+
+* func deskNum2Name(w http.ResponseWriter, r *http.Request, catName string) (catDesc string) {
+
+
+//converts desktop number into desktop name
+
+* func listDesktops(w http.ResponseWriter, r *http.Request) string {
+
+
+//list all destktops given the category list
+
+* func listAllNotes(w http.ResponseWriter, r *http.Request, uid string) []Notes {
+
+
+//lists all sticky notes
+//returns results in json
+
+* func listDesktopsButs(w http.ResponseWriter, r *http.Request, uid string) []Desktops {
+
+
+//list all desktop buttons
+
+* func listDesktopsIcons(w http.ResponseWriter, r *http.Request, uid string) []Icons {
+
+
+//list all desktop icons
+
+* func nowHumanize(date string) (fTime string) {
+
+
+//Display humanized form for the timestamp like 2006-01-02 15:04:05.999999999 -0700 MST
+
+* func stmpHumanize(tStr string) (fTime string) {
+
+
+//Display humanized form of timestamp like 20150316022627
+
+* func validateAccess(w http.ResponseWriter, r *http.Request, FUNC_CODE, lref string) (FL_PROCEED_OK bool) {
+
+
+//validations for access
+//it determines if the current user is a valid or registered user
+
+* func isValidApiCall(w http.ResponseWriter, r *http.Request) (FL_PROCEED_OK bool) {
+
+
+//checks if it is a valid API call
+
+* func validateAccessOauth2(w http.ResponseWriter, r *http.Request, FUNC_CODE, uid, provider, avatar, email string) (FL_PROCEED_OK bool) {
+
+
+//validations for access for oauth users
+
+* func validateToken(w http.ResponseWriter, r *http.Request, FUNC_CODE string, ChanID string, tok string) (FL_PROCEED_OK bool) {
+
+
+//validations for token
+
+* func disp_MEMCACHE_TopWebsites(w http.ResponseWriter, r *http.Request) {
+
+
+//display memcache for top websites
+
+* func getGuestbookKey(uid string) string {
+
+
+//gets guestbook key
+
+* func putStrToMemcacheWithExp(w http.ResponseWriter, r *http.Request,cKey,sValue string, tExp time.Duration) {
+
+
+//puts a string in a memcache
+
+* func getStrMemcacheValueByKey(w http.ResponseWriter, r *http.Request,cKey string) (cVal string) {
+
+
+//gets string from a memcache
+
+* func getBytMemcacheValueByKey(w http.ResponseWriter, r *http.Request,cKey string) (cVal []byte) {
+
+
+//gets byte from a memcache
+
+* func putStrToMemcacheWithoutExp(w http.ResponseWriter, r *http.Request,cKey,sValue string) {
+
+
+//puts string to memcache w/o expiry
+
+* func putBytesToMemcacheWithExp(w http.ResponseWriter, r *http.Request,cKey string,sBytes []byte,tExp time.Duration) {
+
+
+//puts bytes to memcache w/ expiry
+
+* func putBytesToMemcacheWithoutExp(w http.ResponseWriter, r *http.Request,cKey string,sBytes []byte) {
+
+
+//puts bytes to memcache w/o expiry
+
+* func guestbook(w http.ResponseWriter, r *http.Request) {
+
+
+//handles /guestbook processing
+//users can send messages via guestbook
+
+* func markMsgRead(w http.ResponseWriter, r *http.Request,mid string) (ctr int) {
+
+
+//marks guestbook messages as read
+
+* func markMsgDelete(w http.ResponseWriter, r *http.Request,uid,mid string) (ok bool) {
+
+
+//marks guestbook messages as deleted
+
+* func share(w http.ResponseWriter, r *http.Request) {
+
+
+//handles sharing of contents
+
+* func ulapphComments(w http.ResponseWriter, r *http.Request) {
+
+
+//D0040
+//handles commenting system using commento.js
+
+* func social(w http.ResponseWriter, r *http.Request) {
+
+
+//handles /social handler
+
+* func viewProfile(w http.ResponseWriter, r *http.Request, UID, uid string) {
+
+
+//views user profiles
+
+* func notifyGuestbook(w http.ResponseWriter, r *http.Request, NGB_FUNC string, UID string, contentMsg string, FROM string) {
+
+
+//handles guestbook notifications	
+
+* func getMOTD(w http.ResponseWriter, r *http.Request, deskName string) (ranMsgTitle, RAN_MSG, ranMsgSlidesURL string) {
+
+
+//gets message of the day
+//used to display quotations, tips and tricks
+
+* func getRanText(w http.ResponseWriter, r *http.Request, CON_CACHE string) (RAN_MSG string) {
+
+
+//gest random text from a cache of contents
+
+* func cacheMOTDFile(w http.ResponseWriter, r *http.Request, CACHE_TARGET string) (CONCACHE string) {
+
+
+//caches a given MOTD media file
+
+* func getProfilePic(w http.ResponseWriter, r *http.Request, UID string) (PROFILE_PIC string) {
+
+
+//gets profile pic of a user				
+
+* func getCountryPic(w http.ResponseWriter, r *http.Request, UID string) (COUNTRY_PIC string) {
+
+
+//gets country pic of a user
+
+* func getRingtone(w http.ResponseWriter, r *http.Request, UID string) (RINGTONE_URL string) {
+
+
+//gets ringtone for the given user
+
+* func getSoundPrefs(w http.ResponseWriter, r *http.Request, thisChan chan string, chanDone chan bool, UID string) {
+
+
+//gets the sound preferences of the user
+
+* func checkNewMessages(w http.ResponseWriter, r *http.Request, UID string) (GUESTBOOK_NEWM string) {
+
+
+//checks if there are new guestbook messages		
+
+* func checkNumMessages(w http.ResponseWriter, r *http.Request, UID string) (GUESTBOOK_NUM_MSGS int) {
+
+
+//checks the number of guestbook messages
+
+* func adminIcons(w http.ResponseWriter, r *http.Request) {
+
+
+//handles the /admin-icons handler	
+
+* func TASK_MEMCACHER_settingsAllIcons(w http.ResponseWriter, r *http.Request) {
+
+
+//handles caching of desktop icons
+
+* func TASK_MEMCACHER_contentsAll_Icons(w http.ResponseWriter, r *http.Request, TARGET string) {
+
+
+//handles caching of contents and icons
+
+* func trimString (s string, n int) (s2 string) {
+
+
+//trim string (given a string length)
+
+* func exec_FetchUrl(w http.ResponseWriter, r *http.Request , fURL string) {
+
+
+//cached fetch url
+//after executing URLFetcher it will save the results into memcache
+
+* func exec_FetchUrlChan(w http.ResponseWriter, r *http.Request , thisChan chan []byte, fURL string) {
+
+
+//cached fetch url and output to channel
+//after executing URLFetch it will send result to a go channel
+
+* func fetchURL(w http.ResponseWriter, r *http.Request , fURL string) string {
+
+
+//executes URL Fetch and then returns the results as string
+
+* func fetchURLB(w http.ResponseWriter, r *http.Request , fURL string) (bodyBytes []byte, err error) {
+
+
+//executes URL Fetch and then returns the results as bytes
+
+* func TASK_URL_FETCHER(w http.ResponseWriter, r *http.Request , tURL, UID, FREQ string) {
+
+
+//executes URL Fetch from ULAPPH Cloud Desktops built-in cron
+//Every defined cron will be executed and perform the actions based on the configuration
+
+* func sendBroadcastsUpdSlide(w http.ResponseWriter, r *http.Request, uid, DOC_STAT, SID, TITLE, DESC, TAGS, CATEGORY string) {
+
+
+//broadcast content updates
+//if there are updates on the slides, it will be broadcasted
+
+* func sendBroadcastsUpdArticle(w http.ResponseWriter, r *http.Request, uid, DOC_STAT, SID, TITLE, DESC, TAGS, CATEGORY string) {
+
+
+//broadcast content updates
+//if there are updates on the articles, it will be broadcasted
+
+* func grepText(w http.ResponseWriter, r *http.Request, text, keyword string) string {
+
+
+//performs a grep-like operation on a string of text
+
+* func ulapphRouter (w http.ResponseWriter, r *http.Request) {
+
+
+//handles the /ulapph-router handler which does a lot of routing
+//used usually for routing taskqueues and other special system operations
+
+* func TASK_Dweetio (w http.ResponseWriter, r *http.Request) {
+
+
+//POSTs a JSON data to dweet.io
+//an integration to dweet.io
+
+* func getSystemStats(w http.ResponseWriter, r *http.Request) (p TEMPSTRUCT3, err error) {
+
+
+//gets system status details	
+//returns a data struct
+
+* func isAnyoneOnline(w http.ResponseWriter, r *http.Request) bool {
+
+
+//billing fix to determine if there is anyone online
+//if none, we can suspend some operations to minimize usage
+
+* func TASK_MEMCACHER_motd(w http.ResponseWriter, r *http.Request, DISP_MODE, TITLE, generalKey, redURL string) {
+
+
+//caches a given MOTD file and generates a slide or article
+//user gets redirected to the slide or article link
+
+* func TASK_MEMCACHER_RUN_TOPIC_STREAM_UID(w http.ResponseWriter, r *http.Request, UID, MODE string) {
+
+
+//runs a list of topics for a given desktop; each UWM desktop can have lists of particular topics
+//then it opens windows on the main desktop displaying the Google latest results for that topic
+
+* func TASK_MEMCACHER_API_GOOGLE_PLUS_UID(w http.ResponseWriter, r *http.Request, UID, MODE string) {
+
+
+//searches Google Plus given the profile needs/wants of a user
+//an integration to Google Plus API
+//currently disabled due to high billing costs
+
+* func TASK_MEMCACHER_URL_FETCH_NOTIFS(w http.ResponseWriter, r *http.Request, freq string) {
+
+
+//for each user online, it will execute urlfetch crons
+//users must be online so their crons will be executed
+
+* func TASK_MEMCACHER_URLFETCH_NOTIFS_IND (w http.ResponseWriter, r *http.Request, UID, FREQ string) {
+
+
+//gets the urlfetch list or crons for the user
+//then calls the URL fetcher logic to execute it
+
+* func TASK_MEMCACHER_URLFETCH_philvolcs_EQ (w http.ResponseWriter, r *http.Request) {
+
+
+//executes earthquake monitoring in the Philippines
+//an integration with the DOST-PHILVOLCS
+//it parses the Philvolcs data and notifies users online about the earthquake events
+
+* func parse_html(w http.ResponseWriter, r *http.Request, y io.Writer, n *html.Node) {
+
+
+//parses an html
+
+* func getPeopleDirectory (w http.ResponseWriter, r *http.Request) {
+
+
+//gets people directory
+//applicable only for sites server which then calls all connected desktops under this server
+
+* func TASK_MEMCACHER_frequent (w http.ResponseWriter, r *http.Request) {
+
+
+//update overall cached pages such as people directory
+//applicable only to sites server which calls member desktops under it
+
+* func getTrendingContents(w http.ResponseWriter, r *http.Request) {
+
+
+//gets all trending contents from all member desktops under the site server
+//applicable for sites server only
+
+* func getWhatsNewContents(w http.ResponseWriter, r *http.Request) {
+
+
+//gets whats new contents from all desktops who are member of a sites server
+//applicable for sites server only
+
+* func getNewDiscussions(w http.ResponseWriter, r *http.Request) {
+
+
+//D0042
+//gets new comments from all member desktops under a sites server
+//applicable to a sites server only
+
+* func getDesktopsDirectory(w http.ResponseWriter, r *http.Request) {
+
+
+//gets a directory of all desktops
+//applicable only for sites server
+
+* func TASK_MEMCACHER_general (w http.ResponseWriter, r *http.Request) {
+
+
+//a taskqueue cacheing logic for getting trending contents, whats new etc
+
+* func cacheProfilePic(w http.ResponseWriter, r *http.Request, uid string) string {
+
+
+//caches profile pic for a user
+
+* func TASK_MEMCACHER_contentsAll_Slides(w http.ResponseWriter, r *http.Request, TARGET string) {
+
+
+//caches index of contents of all slides
+//when the website is accessed, it serves the cached pages
+
+* func TASK_MEMCACHER_contentsAll_Articles(w http.ResponseWriter, r *http.Request, TARGET string) {
+
+
+//caches index of contents of all articles
+//when the website is accessed, it serves the cached pages
+
+* func peopleEdit(w http.ResponseWriter, r *http.Request) {
+
+
+//edits user profile and other user specific operations
+
+* func getDefUwms(w http.ResponseWriter, r *http.Request) string {
+
+
+//gets the default UWM windows
+//these are the windows that opens by default such as clock, calendar, etc
+
+* func getCreditPoints(w http.ResponseWriter, r *http.Request, UID string) (credPts int) {
+
+
+//gets the credit points for the user
+
+* func adminAds(w http.ResponseWriter, r *http.Request) {
+
+
+//handles ads admininstration
+//ulapph cloud desktop can serve ads
+
+* func newAdsPos1(adsList, ADS_ID string) (newAds string) {
+
+
+//new ads position 1
+//there are 3 possible ads slots/frames for every slide or article
+
+* func newAdsPos2(adsList, ADS_ID string) (newAds string) {
+
+
+//new ads position 2
+
+* func newAdsPos3(adsList, ADS_ID string) (newAds string) {
+
+
+//new ads position 3
+
+* func validateURL(w http.ResponseWriter, r *http.Request, tURL string) {
+
+
+//validates if a given string is a valid url
+
+* func adminSlides(w http.ResponseWriter, r *http.Request) {
+
+
+//handles /admin-slides handler
+//does all things related to slides processing especially those specific to owner of slides or admin					
+
+* func dispTopContents(w http.ResponseWriter, r *http.Request, deskName, DISP_CODE, cursor, tbl_src string, thisChan chan string, isChanDone chan bool) {
+
+
+//on the website homepage, it display Top contents based on views, comments, etc
+
+* func adminArticles(w http.ResponseWriter, r *http.Request) {
+
+
+//handles /admin-articles handler
+//only accessible to owner or admin which manages the articles and contents
+
+* func getPushContents(w http.ResponseWriter, r *http.Request, target string) string {
+
+
+//gets push contents for the gallery homepage
+
+* func ulapphNotifs(w http.ResponseWriter, r *http.Request) {
+
+
+//D0028
+//handles notifications specially for the things api
+//it can trigger alarm on the user desktop
+
+* func ulapphThings(w http.ResponseWriter, r *http.Request) {
+
+
+//D0028
+//the internet of things api of ulapph cloud desktop
+//it store payload, retrieve payload etc
+
+* func thingsError(w http.ResponseWriter, r *http.Request, msg string) {
+
+
+//common error messages for internet of things
+
+* func thingsError2(w http.ResponseWriter, r *http.Request, msg, msg2 string) {
+
+
+//common error messages for internet of things
+
+* func media(w http.ResponseWriter, r *http.Request) {
+
+
+//D0041
+//handles /media handler either for public or private operations
+//any calls to /media are handled by this such as display of TDSMEDIA files
+
+* func serveMediaContent(w http.ResponseWriter, r *http.Request, SID, MIME_TYPE string) {
+
+
+//serves TDSMEDIA contents given a SID and mime type
+//before it serves data, it performs security checkings
+
+* func checkPersonalAccess(w http.ResponseWriter, r *http.Request, AUTHOR, SHARED_TO, SID string, MEDIA_ID int) (isAllowed bool) {
+
+
+//checks if current user has access to a Personal content
+
+* func serveMediaContentNow(w http.ResponseWriter, r *http.Request, SID, MIME_TYPE string) {
+
+
+//serves media content via SID and mime type w/o checking security
+
+* func settingsDisplayScreen(w http.ResponseWriter, r *http.Request) {
+
+
+//handles display settings for desktop UIs
+//handles the macOS-like docks and icons
+
+* func getIpAdd(w http.ResponseWriter, r *http.Request) (ipStr string) {
+
+
+//gets the ip address from the http request
+//handles forwarded IPs via proxy
+
+* func getRefDoc(w http.ResponseWriter, r *http.Request, tURL string) (refDoc string, sidOk bool) {
+
+
+//D0040
+//gets the SID reference from a http request URL
+
+* func getCCKey(w http.ResponseWriter, r *http.Request, tURL string) (cckey string, ccOk bool) {
+
+
+//D0040
+//gets captcha key from the http request url
+
+* func getDeskCat(w http.ResponseWriter, r *http.Request) (desktop string) {
+
+
+//get desktop category
+
+* func getRefUwm(w http.ResponseWriter, r *http.Request) (refUwm string) {
+
+
+//gets the URM reference from the http request url
+
+* func updateUserActiveData(w http.ResponseWriter, r *http.Request, c appengine.Context, uid, content string) {
+
+
+//updates if the user if current active
+//used to detect the presence of a user
+
+* func queueCounterIncrement(w http.ResponseWriter, r *http.Request) {
+
+
+//task queue to increment counter
+
+* func TASK_MEMCACHER_desktopIcons(w http.ResponseWriter, r *http.Request) {
+
+
+//task queue to cache desktop0 icons
+
+* 		//buffer3.WriteString(fmt.Sprintf("func getIcons()\n"))
+
+- No comments
+
+* 		//buffer3.WriteString(fmt.Sprintf("func getIcons()\n"))
+
+- No comments
+
+* func TASK_MEMCACHER_All_desktopCss(w http.ResponseWriter, r *http.Request) {
+
+
+//cache desktopCss for all desktop0s & desktop1-20
+
+* func TASK_MEMCACHER_desktopCss(w http.ResponseWriter, r *http.Request) {
+
+
+//task queue to cache desktop0 css
+
+* 	//buffer3.WriteString(fmt.Sprintf("func getIcons()\n"))
+
+- No comments
+
+* func TASK_MEMCACHER_desktop0_homeIcons_Single(w http.ResponseWriter, r *http.Request, uid string) {
+
+
+//desktop0 homeIcons (single user)
+
+* func TASK_MEMCACHER_desktop0_homeIcons(w http.ResponseWriter, r *http.Request) {
+
+
+//desktop0 homeIcons
+
+* func TASK_MEMCACHER_desktop0_wallpapers(w http.ResponseWriter, r *http.Request) {
+
+
+//desktop0 wallpapers
+
+* func TASK_MEMCACHER_desktopN_wallpapers(w http.ResponseWriter, r *http.Request) {
+
+
+//desktopN wallpapers
+
+* func queueStatsIncLoggedIn(w http.ResponseWriter, r *http.Request) {
+
+
+//task queue to increment logged in stats
+
+* func getActiveStatus(w http.ResponseWriter, r *http.Request, UID string) (IS_ACTIVE string)  {
+
+
+//online user checker
+//checks if user is currently active or not
+
+* func queueStatsUserActive(w http.ResponseWriter, r *http.Request) {
+
+
+//task queue to set user as active
+
+* func queueBroadcastPresence(w http.ResponseWriter, r *http.Request) {
+
+
+//for sessions in local server (sessions2)
+//task queue to broadcast presence to server
+
+* func procBroadcastAll(w http.ResponseWriter, r *http.Request) {
+
+
+//for sites server only
+//broadcasts notifications to all
+
+* func postUrlBroadcast(w http.ResponseWriter, r *http.Request, URL string) {
+
+
+//posts broadcasts to all given a URL
+
+* func procBroadcastContentsAll(w http.ResponseWriter, r *http.Request) {
+
+
+//broadcast worldwide contents
+
+* func procBroadcastCustomLoc(w http.ResponseWriter, r *http.Request, uid, latlon string) {
+
+
+//broadcast current location
+
+* func procMessageAll(w http.ResponseWriter, r *http.Request) {
+
+
+//for sites server only
+//process messages to all
+
+* func getCurrAccLog(w http.ResponseWriter, r *http.Request) (CURR_ACC_LOG_ALL string) {
+
+
+//for sites server only
+//gets current account logs
+
+* func getHostList(w http.ResponseWriter, r *http.Request) (TOT int, HOST_LIST string) {
+
+
+//for sites server only
+//gets the hostlist from cache or from the sites server
+
+* /* func isValidInboundAppId(w http.ResponseWriter, r *http.Request, appId string) (res string) {
+
+
+//for sites server only
+//checks inter ulapph cloud desktop calls if they are valid
+
+* func updateMyULAPPHLoc(w http.ResponseWriter, r *http.Request, uid, latlon string) {
+
+
+//for sites server only
+//stores user longitude and latitude locations
+
+* func getMyULAPPH(w http.ResponseWriter, r *http.Request, mode string) (url string) {
+
+
+//for sites server only
+//gets the ulapph cliud desktop owned by the user
+
+* func getHostList2(w http.ResponseWriter, r *http.Request) (HOST_LIST2 string) {
+
+
+//for sites server only
+//gets the user to owned ulapph cloud desktop mapping
+
+* func fetchHostList(w http.ResponseWriter, r *http.Request) (TOT int, HOST_LIST string) {
+
+
+//for non-sites server only
+//fetch host list from cache
+
+* func procBroadcastPresence(w http.ResponseWriter, r *http.Request) {
+
+
+//broadcasts presence to all
+
+* func procBroadcastUserLoc(w http.ResponseWriter, r *http.Request, UID, latLon string) {
+
+
+//broadcasts user locations via longitude and latitude
+
+* func procBroadcastMessage(w http.ResponseWriter, r *http.Request) {
+
+
+//broadcasts messages to the sites server
+
+* func getSitesServerName(w http.ResponseWriter, r *http.Request) ( SEARCH_SERVER_NAME string) {
+
+
+//check if sites server name only
+
+* func getServerNameFromURL(w http.ResponseWriter, r *http.Request, url string) ( SERVER_NAME string) {
+
+
+//get hostname from url
+
+* func getSitesServer(w http.ResponseWriter, r *http.Request) (IS_SEARCH_SERVER, SEARCH_SERVER string, HOST_LIST_MID int) {
+
+
+//check if sites server
+
+* func procBroadcastContentsWorldwide(w http.ResponseWriter, r *http.Request) {
+
+
+//task queue to broadcast contents sharing
+
+* func procBroadcastPresence2(w http.ResponseWriter, r *http.Request) {
+
+
+//task queue to broadcast presence status
+
+* func procTrending(w http.ResponseWriter, r *http.Request) {
+
+
+//process trending contents in this cloud desktop
+
+* func procWhatsNew(w http.ResponseWriter, r *http.Request) {
+
+
+//process whats new contents in this cloud desktop
+
+* func procDiscussions(w http.ResponseWriter, r *http.Request) {
+
+
+//D0042
+//Gets the newly discussed contents
+//it process comments index
+
+* func procPeopleDir(w http.ResponseWriter, r *http.Request) {
+
+
+//process the people directory for this cloud desktop
+
+* func showOverallSessions(w http.ResponseWriter, r *http.Request, target string, FL_BOT bool) {
+
+
+//shows the overall sessions
+
+* func showOverallRobot(w http.ResponseWriter, r *http.Request, target string) {
+
+
+//shows if access is from a robot or non-humans
+
+* func showOverallMap(w http.ResponseWriter, r *http.Request) {
+
+
+//shows overall map
+
+* func showOverallPeople(w http.ResponseWriter, r *http.Request, FL_BOT bool) {
+
+
+//shows overall people directory	
+
+* func showOverallSites(w http.ResponseWriter, r *http.Request, FL_BOT bool) {
+
+
+//shows overall sites
+
+* func showOverallTrending(w http.ResponseWriter, r *http.Request) {
+
+
+//shows overall trending contents
+
+* func showOverallWhatsNew(w http.ResponseWriter, r *http.Request) {
+
+
+//shows overall whats new
+
+* func showOverallDiscussions(w http.ResponseWriter, r *http.Request) {
+
+
+//D0042
+//shows overall discussion and comments
+
+* func procBroadcastMessage2(w http.ResponseWriter, r *http.Request) {
+
+
+//task queue to broadcast messages
+
+* func procBroadcastPresence4(w http.ResponseWriter, r *http.Request) {
+
+
+//sends notifs from all over ulapph (from site server)
+
+* func procLogHits(w http.ResponseWriter, r *http.Request) {
+
+
+//process log hits
+
+* func procBroadcastMessage4(w http.ResponseWriter, r *http.Request) {
+
+
+//process broad messages by putting them in guestbooks	
+
+* func queueStatsDecLoggedIn(w http.ResponseWriter, r *http.Request) {
+
+
+//decrement login counters
+
+* func queueNotifyGB(w http.ResponseWriter, r *http.Request) {
+
+
+//process taskqueue to notify message via guestbook
+
+* func queueLogMapCoors(w http.ResponseWriter, r *http.Request, xLatLong, USER_TYPE, TARGET_URL, viaStr, SID string) {
+
+
+//process taskqueue to log users coordinates
+
+* func queueNotifyCH(w http.ResponseWriter, r *http.Request) {
+
+
+//process taskqueue to notify all users via channel
+
+* func queueRatings(w http.ResponseWriter, r *http.Request) {
+
+
+//process taskqueue to log ratings
+
+* func queueWgetUrl(w http.ResponseWriter, r *http.Request) {
+
+
+//process taskqueue to embed source to SIDs
+
+* func queueAddToSid(w http.ResponseWriter, r *http.Request) {
+
+
+//process taskqueue to embed source to SIDs
+
+* func appendToSid(w http.ResponseWriter, r *http.Request, UID, FUNC, SID, TEXT string) (err error){
+
+
+//process appending of data to existing SID
+
+* func blobFileSaver(w http.ResponseWriter, r *http.Request, SID string, DATA []byte) error {
+
+
+//saves blob data for a given SID document
+
+* func queueSocial(w http.ResponseWriter, r *http.Request) {
+
+
+//process taskqueue to log social ratings
+
+* func queueAdsLogViews(w http.ResponseWriter, r *http.Request) {
+
+
+//process taskqueue to log ads views
+
+* func queueInviteEmail(w http.ResponseWriter, r *http.Request) {
+
+
+//process taskqueue to send email invites
+
+* func queueGenericEmail(w http.ResponseWriter, r *http.Request) {
+
+
+//process taskqueue to send email invites
+
+* func queueAdvertiseEmail(w http.ResponseWriter, r *http.Request) {
+
+
+//process taskqueue to inquire about ads
+
+* func queueFeedbackEmail(w http.ResponseWriter, r *http.Request) {
+
+
+//process taskqueue to send feedback message
+
+* func queueStatsUpdateMostRecent(w http.ResponseWriter, r *http.Request) {
+
+
+//stores the most recent users
+
+* func queueInsertUnknownRule(w http.ResponseWriter, r *http.Request) {
+
+
+//insert new unknown rule
+
+* func getKeyAccess(c appengine.Context, accessLogKey string) *datastore.Key {
+
+
+//get access key for logs
+
+* func getKeyDesktop(c appengine.Context, desktopKey string) *datastore.Key {
+
+
+//get desktop key for desktop categories
+//each UWM desktop corresponds to a category
+
+* func adhocWebLoadTDSUSERS(w http.ResponseWriter, r *http.Request) {
+
+
+//used for installation and setup only
+//inserts initial records
+
+* func adhocDeleteTDSUSERS(w http.ResponseWriter, r *http.Request) {
+
+
+//used for installation and setup only
+//deletes initial records
+
+* func adhocDeleteTDSRULES(w http.ResponseWriter, r *http.Request) {
+
+
+//used for installation and setup only
+//deletes initial records
+
+* func adhocDeleteTDSSTATS(w http.ResponseWriter, r *http.Request) {
+
+
+//used for installation and setup only
+//deletes initial records
+
+* func adhocDeleteTDSCNFG(w http.ResponseWriter, r *http.Request) {
+
+
+//used for installation and setup only
+//deletes initial records
+
+* func adhocDeleteTDSICONS(w http.ResponseWriter, r *http.Request) {
+
+
+//used for installation and setup only
+//deletes initial records
+
+* func adhocDeleteTDSADS(w http.ResponseWriter, r *http.Request) {
+
+
+//used for installation and setup only
+//deletes initial records
+
+* func adhocDeleteTDSADTS(w http.ResponseWriter, r *http.Request) {
+
+
+//used for installation and setup only
+//deletes initial records
+
+* func adhocDeleteTDSSLIDE(w http.ResponseWriter, r *http.Request) {
+
+
+//used for installation and setup only
+//deletes initial records
+
+* func adhocDeleteTDSARTL(w http.ResponseWriter, r *http.Request) {
+
+
+//used for installation and setup only
+//deletes initial records
+
+* func adhocDeleteTDSMEDIA(w http.ResponseWriter, r *http.Request) {
+
+
+//used for installation and setup only
+//deletes initial records
+
+* func adhocDeleteTDSLOGS(w http.ResponseWriter, r *http.Request) {
+
+
+//used for installation and setup only
+//deletes initial records
+
+* func adhocDeleteChannel(w http.ResponseWriter, r *http.Request) {
+
+
+//used for installation and setup only
+//deletes initial records
+
+* func adhocDeleteGreeting(w http.ResponseWriter, r *http.Request) {
+
+
+//used for installation and setup only
+//deletes initial records
+
+* func adhocDeleteIndex(w http.ResponseWriter, r *http.Request, IDX_TARGET string) {
+
+
+//used for installation and setup only
+//deletes initial records
+
+* func adhocWebLoadTDSSTATS(w http.ResponseWriter, r *http.Request) {
+
+
+//used for installation and setup only
+//loads initial records
+
+* func adhocWebLoadTDSSLIDE(w http.ResponseWriter, r *http.Request) {
+
+
+//used for installation and setup only
+//loads initial records
+
+* func adhocWebLoadTDSARTL(w http.ResponseWriter, r *http.Request) {
+
+
+//used for installation and setup only
+//loads initial records
+
+* func adhocWebLoadTDSMEDIA(w http.ResponseWriter, r *http.Request) {
+
+
+//used for installation and setup only
+//loads initial records
+
+* func adhocWebLoadTDSCNFG(w http.ResponseWriter, r *http.Request) {
+
+
+//used for installation and setup only
+//loads initial records
+
+* func adhocWebLoadTDSICONS(w http.ResponseWriter, r *http.Request) {
+
+
+//used for installation and setup only
+//loads initial records
+
+* func adhocWebLoadTDSRULES(w http.ResponseWriter, r *http.Request) {
+
+
+//used for installation and setup only
+//loads initial records
+
+* func adhocWebLoadTDSADS(w http.ResponseWriter, r *http.Request) {
+
+
+//used for installation and setup only
+//loads initial records
+
+* func adhocWebLoadTDSADTS(w http.ResponseWriter, r *http.Request) {
+
+
+//used for installation and setup only
+//loads initial records
+
+* func usersProcessor(w http.ResponseWriter, r *http.Request, auth, USER_EMAIL_ID string, FUNC_CODE string) (FL_VALID_USER bool, GROUP_ID, FL_BILLED, USER_ACC_TYP string) {
+
+
+//USERS processing logic
+//very important logic for user validations, group checking etc
+
+* func TASK_MEMCACHER_usersProcessor(w http.ResponseWriter, r *http.Request) {
+
+
+//TASK MEMCACHER USERS processing logic
+
+* func homeProcessor(w http.ResponseWriter, r *http.Request) (OnlineUsers int, MOST_RECENT_1, MOST_RECENT_2, MOST_RECENT_3, MOST_ACTIVE_1, MOST_ACTIVE_2, MOST_ACTIVE_3, MOST_POPULAR_1, MOST_POPULAR_2, MOST_POPULAR_3, MOST_OS_1, MOST_OS_2, MOST_OS_3, MOST_BROWSER_1, MOST_BROWSER_2, MOST_BROWSER_3 string) {
+
+
+//homeProcessor for displaying recent os, user, browsers etc
+
+* func sysChecker(w http.ResponseWriter, c appengine.Context, FUNC_CODE string) (FL_RET_STAT bool, SYS_VAL_NUM int, SYS_VAL_TXT string) {
+
+
+//check if user is online; otherwise stop running some crons
+
+* func getStyle(w http.ResponseWriter, c appengine.Context, USER_EMAIL_ID string, deskName string) (style string) {
+
+
+//get CSS custom
+
+* func getAds(w http.ResponseWriter, r *http.Request, FUNC_ID string, ADS_ID int, DESKTOP string, ruleNum int, xCountry, xRegion, xCity string) (FL_ADS_FOUND bool) {
+
+
+//get Ads and display the ads found via iframe
+
+* func getAds2(w http.ResponseWriter, r *http.Request, FUNC_ID string, ADS_ID int, DESKTOP string, xCountry, xRegion, xCity, PLATFORM, BROWSER, uReferer string) (FL_ADS_FOUND bool, ADS_TYP, IMG_URL, ADS_LINK, ADS_DEST, ADS_TITLE string) {
+
+
+//get a random ads and returns the details about the ad
+
+* func handleClickAds(w http.ResponseWriter, r *http.Request) {
+
+
+//handles actions when clicked-ads
+
+* func handleClickUrl(w http.ResponseWriter, r *http.Request) {
+
+
+//handles actions when clicked-url
+
+* func handleClickUrlPublic(w http.ResponseWriter, r *http.Request) {
+
+
+//handles actions when url is clicked in public
+
+* func getIconDtls(w http.ResponseWriter, r *http.Request, FUNC_CODE string, ICON_ID int, URL_ADD string) (FL_ICON_EXISTS bool, ICON_ID_R int, URL_ADD_R string, ICON_NAME_R string, IMG_URL_R string) {
+
+
+//check if icon/URL exists to prevent dup icons upload
+
+* 				msgDtl := fmt.Sprintf("[U00094] ERROR: func getIconDtls() FUNC_CODE: %v needs %v populated properly.", FUNC_CODE, URL_ADD)
+
+- No comments
+
+* 				msgDtl := fmt.Sprintf("[U00095] ERROR: func getIconDtls() FUNC_CODE: %v needs %v populated properly.", FUNC_CODE, ICON_ID)
+
+- No comments
+
+* func getIcons(w http.ResponseWriter, c appengine.Context, USER_EMAIL_ID string, deskName string) (FL_CUSTOM_ICONS bool, iconsHTML string) {
+
+
+//get ICONS custom
+
+* 	//buffer3.WriteString(fmt.Sprintf("func getIcons()\n"))
+
+- No comments
+
+* func getIconsDesktop(w http.ResponseWriter, r *http.Request, thisDeskNum int, TXT_VAL string) (iconsHTML string) {
+
+
+//gets desktop icons
+
+* func TASK_MEMCACHER_rulesProcessor(w http.ResponseWriter, r *http.Request) {
+
+
+//rules processing logic
+//caches data for a rule
+
+* func rulesProcessor(w http.ResponseWriter, r *http.Request, t string) (FL_FOUND_RULE bool, FL_MATCH_ALL_EXC_IP_ADD bool, PROC_ERR_MSG string, ruleNum int, dispType string, DestURL string, TrigID string, AdsID string) {
+
+
+//RULES processing logic
+//gets rules from cache or database
+
+* func getTimestamp() string {
+
+
+//gets the current timestamp with format 20060102150405
+
+* func getYear() string {
+
+
+//gets current year w/ format 2006
+
+* func adslotsProcessor(w http.ResponseWriter, r *http.Request, CATEGORY string) (FL_FOUND_SLOT bool, AdsID2 string) {
+
+
+//ads timeslots processing logic
+
+* func TASK_MEMCACHER_adslotsProcessor(w http.ResponseWriter, r *http.Request) {
+
+
+//TASK MEMCACHER for ads timeslots processing logic
+
+* func taskUpdateStatsAccess(w http.ResponseWriter, r *http.Request) {
+
+
+//BATCH JOBS
+//update STATS.ACCESS statistics
+
+* func taskUpdateStatsDesktop(w http.ResponseWriter, r *http.Request) {
+
+
+//update STATS.DESKTOP statistics
+
+* func taskCleanupInactiveUsers(w http.ResponseWriter, r *http.Request) {
+
+
+//clean-up inactive users
+
+* func checkQuotaSystem(w http.ResponseWriter, r *http.Request) (FL_PROC_OK bool) {
+
+
+//checks system quota
+
+* func checkQuotaSlides(w http.ResponseWriter, r *http.Request, uid string) {
+
+
+//checks slides quota
+
+* func checkQuotaArticles(w http.ResponseWriter, r *http.Request, uid string) {
+
+
+//check articles quota
+
+* func checkQuotaMedia(w http.ResponseWriter, r *http.Request, uid string) {
+
+
+//checks media quota
+
+* func countData(w http.ResponseWriter, r *http.Request, TARGET, UID string) (CURR_COUNT int) {
+
+
+//counts data for slides, articles or media
+
+* func countryChecker(w http.ResponseWriter, r *http.Request) (FL_PROC_OK bool){
+
+
+//checks country which originated the http request
+//this is not accurate as some browsers can appear to come from different country
+
+* /* func isInBoundAppidAllowed(w http.ResponseWriter, r *http.Request, appId string) (res string) {
+
+
+//checks if inbound IP address is allowed
+//it calls the sites server
+
+* func checkInBoundAppidAllowed(w http.ResponseWriter, r *http.Request) bool {
+
+
+//checks if inbound request is vald
+
+* func getMapLink(w http.ResponseWriter, r *http.Request, USER_TYPE, TARGET_URL, SID string) (mapURL string) {
+
+
+//gets map link of the access
+
+* func checkReferrer(w http.ResponseWriter, r *http.Request) {
+
+
+//checks the referrer of the request
+
+* func checkIfOkToRun(w http.ResponseWriter, r *http.Request) (IS_OK_TO_RUN bool) {
+
+
+//checks if okay to run or not
+//checks if user is online
+
+* func taskUpdateStatsOsBr(w http.ResponseWriter, r *http.Request) {
+
+
+//update STATS.OS & STATS.BROWSER statistics
+
+* func handleServe(w http.ResponseWriter, r *http.Request) {
+
+
+//serves newly uploaded blobstore-icons
+
+* func addLinkToIcons(w http.ResponseWriter, r *http.Request, tName, tUrl, tDesk string) {
+
+
+//edwinxxx
+//saves links to icons db
+
+* func handleServePeople(w http.ResponseWriter, r *http.Request) {
+
+
+//handles newly uploaded blobstore-profile pic
+
+* func handleUpload(w http.ResponseWriter, r *http.Request) {
+
+
+//handles newly uploaded blobs
+
+* func handleUploadPeople(w http.ResponseWriter, r *http.Request) {
+
+
+//handles newly uploaded people pics
+
+* func handleServeAds(w http.ResponseWriter, r *http.Request) {
+
+
+//handles newly uploaded blobstore-ads
+
+* func handleServeSlides(w http.ResponseWriter, r *http.Request) {
+
+
+//handles newly uploaded slides
+
+* func handleServeArticles(w http.ResponseWriter, r *http.Request) {
+
+
+//handles newly uploaded articles
+
+* func handleServeMedia(w http.ResponseWriter, r *http.Request) {
+
+
+//handles new uploaded media files
+
+* func getMimeType(w http.ResponseWriter, r *http.Request, ext string) (F_MIME_TYPE, F_MIME_EXT string) {
+
+
+//gets the mimetype given a file extension
+
+* func handleUploadAds(w http.ResponseWriter, r *http.Request) {
+
+
+//handles ads uploads
+
+* func handleUploadSlides(w http.ResponseWriter, r *http.Request) {
+
+
+//handles slides uploads
+
+* func handleUploadArticles(w http.ResponseWriter, r *http.Request) {
+
+
+//handles upload of articles
+
+* func handleUploadMedia(w http.ResponseWriter, r *http.Request) {
+
+
+//handles uploads of media
+
+* func serveError(c appengine.Context, w http.ResponseWriter, err error) {
+
+
+//common for serving errors
+
+* func playable(c Code) bool {
+
+
+//golang SLIDES
+//checks if play is enabled inside a slide
+
+* func getAvailThemes(w http.ResponseWriter, r *http.Request, SID, con_url string) {
+
+
+//gets available themes
+
+* func getSlidesTemplate(w http.ResponseWriter, r *http.Request) string {
+
+
+//gets slides template
+
+* func getArticlesTemplate(w http.ResponseWriter, r *http.Request) string {
+
+
+//gets article template
+
+* func parsePresentTemplate(name string) *template.Template {
+
+
+//parses a template
+
+* func parseCustomTemplatePres(tempt string) *template.Template {
+
+
+//parses a custom template
+
+* func renderCustomTemplates(w http.ResponseWriter, r *http.Request, mode, cKey, text, mid string) error {
+
+
+//renders a custom template
+
+* func parseCustomTemplateReg(tempt string) *template.Template {
+
+
+//parses regular templates
+
+* func renderPresentation(w http.ResponseWriter, r *http.Request, y io.Writer, fname string, doc *Doc, sl_tmp string) error {
+
+
+//renders slides or articles
+//in ulapph cloud desktop, content is separated from templates
+//it automatically renders data given the slide/article templates
+
+* func renderStyleCssTemplates(w http.ResponseWriter, r *http.Request, extName, TASK_MEMCACHER_desktopWP_loginWP, TASK_MEMCACHER_desktopWP_bigWP string) {
+
+
+//renders custom css style templates
+
+* func getBasicColors(w http.ResponseWriter, r *http.Request) *TEMPSTRUCT {
+
+
+//gets basic random colors
+
+* func isRandomColors(w http.ResponseWriter, r *http.Request, uid string) string {
+
+
+//checks if user specified to randomized colors
+
+* func getStartColor(w http.ResponseWriter, r *http.Request) string {
+
+
+//gets the start color
+
+* func renderStyleCssTemplates2(w http.ResponseWriter, r *http.Request) {
+
+
+//renders custom style css template
+
+* func renderStyleCssColored(w http.ResponseWriter, r *http.Request, name string) {
+
+
+//render style css with random colors
+
+* func renderCountdownPage(w http.ResponseWriter, r *http.Request, name, title, date, color1, color2, color3 string) {
+
+
+//renders countdown timer page
+
+* func renderButtonLink(w http.ResponseWriter, r *http.Request, name, turl, title string) {
+
+
+//renders a button link for uwm
+
+* func renderAddUWMPage(w http.ResponseWriter, r *http.Request, name, uid, n, d string) {
+
+
+//renders add to uwm page
+//this template handles how we add new windows in a uwm desktop
+
+* func renderInstallerPage(w http.ResponseWriter, r *http.Request, name, uid string) {
+
+
+//D0044
+//renders installer page
+
+* func getActiveColor(w http.ResponseWriter, r *http.Request) string {
+
+
+//gets active color
+
+* func getInActiveColor(w http.ResponseWriter, r *http.Request) string {
+
+
+//gets inactive color
+
+* func getAppsProvider(w http.ResponseWriter, r *http.Request) string {
+
+
+//gets the preferred service provider
+//either Google or Microsoft
+
+* func userPrivacy(w http.ResponseWriter, r *http.Request) string {
+
+
+//gets user privacy settings
+//user can become incognito in ulapph cloud desktop
+
+* func renderJSWMStyleCssTemplates(w http.ResponseWriter, r *http.Request) {
+
+
+//renders JSWM css templates
+
+* func renderSocialSharing(w http.ResponseWriter, r *http.Request, title, turl string) {
+
+
+//renders social sharing template
+
+* func renderMessage3D(w http.ResponseWriter, r *http.Request, message string) {
+
+
+//render 3d message
+
+* func renderStaticTemplates(w http.ResponseWriter, r *http.Request, extName string) {
+
+
+//renders static templates
+
+* func renderStaticWithTEMPSTRUCT2(w http.ResponseWriter, r *http.Request, doc *TEMPSTRUCT2, extName string) {
+
+
+//renders static templates
+
+* func renderOverQuotaErrorTemplates(w http.ResponseWriter, r *http.Request) {
+
+
+//render overquota error message template
+
+* func (s presFileNotFoundError) Error() string { return fmt.Sprintf("File %s not found.", string(s)) }
+
+
+//returns profile not found
+
+* func writeHTMLHeader(w http.ResponseWriter, status int) {
+
+
+//writes a usual 200 HTML header
+
+* func writeTextHeader(w http.ResponseWriter, status int) {
+
+
+//writes a text plain html header
+
+* func (t transport2) RoundTrip(r *http.Request) (*http.Response, error) {
+
+
+//return roundtrip
+
+* func httpClient(r *http.Request) *http.Client {
+
+
+//returns an http client
+
+* func getTDSMEDIABlobKey(w http.ResponseWriter, r *http.Request, MEDIA_ID int) (BLOB_KEY, PROP, TITLE, AUTHOR, DOC_STAT, FL_SHARED, IMG_URL, DATA_TYPE, MIME_TYPE, DESC, SHARED_TO string) {
+
+
+//returns media details given a media id
+
+* func getTDSSLIDEBlobKey(w http.ResponseWriter, r *http.Request, DOC_ID int) (BLOB_KEY, PUB_STAT, FL_SHARED, AUTHOR, FL_COUNTRY_SPECIFIC, TITLE, IMG_URL, SHARED_TO, MUSIC_ID, GET_NEXT string) {
+
+
+//returns slide details given a blobKey
+
+* func getTDSARTLBlobKey(w http.ResponseWriter, r *http.Request, DOC_ID int) (BLOB_KEY, PUB_STAT, FL_SHARED, AUTHOR, FL_COUNTRY_SPECIFIC, TITLE, SHARED_TO, IMG_URL, MUSIC_ID string) {
+
+
+//returns articles details given a doc id
+
+* func getTDSSLIDEDocID(w http.ResponseWriter, r *http.Request, BLOB_KEY string) (DOC_ID int, PUB_STAT, FL_SHARED, AUTHOR, FL_COUNTRY_SPECIFIC, TITLE, SHARED_TO, MUSIC_ID, GET_NEXT string) {
+
+
+//returns slide details given a blob key
+
+* func getTDSARTLDocID(w http.ResponseWriter, r *http.Request, BLOB_KEY string) (DOC_ID int, PUB_STAT, FL_SHARED, AUTHOR, FL_COUNTRY_SPECIFIC, TITLE, SHARED_TO, IMG_URL, MUSIC_ID string) {
+
+
+//returns article details given a doc id
+
+* func checkSpecialOptions(w http.ResponseWriter, r *http.Request, mode, FL_COUNTRY_SPECIFIC string) (res string) {
+
+
+//checks special options
+//used FL_COUNTRY_SPECIFIC but it handles more than coutry specific checks
+
+* func slides(w http.ResponseWriter, r *http.Request) {
+
+
+//handles /slides handler
+//displays slides from http requests
+//it serves owner and public requests to automatically render slides
+
+* func articles(w http.ResponseWriter, r *http.Request) {
+
+
+//handles /articles handler
+//displays articles from http requests
+//it serves owner and public requests to automatically render articles
+
+* func presenter(w http.ResponseWriter, r *http.Request) {
+
+
+//handles rendering of slides if presenter mode
+
+* func servePresentation(w http.ResponseWriter, r *http.Request, TYPE string, MODE string, PARM string, SECS string, TITLE string, blobkey string, SL_TMP string, SID string, FORCE, FL_COUNTRY_SPECIFIC, DESKTOP, SOUND, DOC_ID, IMG_URL, GOTO, PRESENTER_SESSION_KEY, MUSIC_ID, GET_NEXT, AUTHOR, PUB_STAT, FL_SHARED string) error {
+
+
+//serves presentation of a slide or article
+//it can handle auto switching between slides and articles depending on device type
+
+* func serveCompile(w http.ResponseWriter, r *http.Request) {
+
+
+//D0044
+//Handles installer logic
+//Aims to automatically ulapph cloud desktop by calling the admin APIs
+//THIS DOESNT WORK YET!
+
+* func createProjectID(w http.ResponseWriter, r *http.Request, pid, tok, uid string) error {
+
+
+//create google appengine project id
+
+* /* func installProject(w http.ResponseWriter, r *http.Request, pid, tok string) error {
+
+
+//D0051
+//install ulapph cloud desktop in google appengine project id
+
+* func initializeProjectID(w http.ResponseWriter, r *http.Request, pid, tok, uid string) error {
+
+
+//D0051
+//create google appengine project id
+
+* func serveBot(w http.ResponseWriter, r *http.Request) error {
+
+
+//serves page to a bot
+
+* func validatePasscode(w http.ResponseWriter, r *http.Request, refs, sharedList, passCode string) (isValid bool) {
+
+
+//validates passcode for a shared content
+
+* func Template() *template.Template {
+
+
+// Template returns an empty template with the action functions in its FuncMap.
+
+* func (d *Doc) Render(y io.Writer, t *template.Template) error {
+
+
+// Render renders the doc to the given writer using the provided template.
+
+* func (s *Section) Render(y io.Writer, t *template.Template) error {
+
+
+// Render renders the section to the given writer using the provided template.
+
+* func Register(name string, parser ParseFunc) {
+
+
+// Register binds the named action, which does not begin with a period, to the
+// specified parser to be invoked when the name, with a period, appears in the
+// present input text.
+
+* func (p *Author) TextElem() (elems []Elem) {
+
+
+// TextElem returns the first text elements of the author details.
+// This is used to display the author' name, job title, and company
+// without the contact details.
+
+* func (s Section) Sections() (sections []Section) {
+
+- No comments
+
+* func (s Section) Level() int {
+
+
+// Level returns the level of the given section.
+// The document title is level 1, main section 2, etc.
+
+* func (s Section) FormattedNumber() string {
+
+
+// FormattedNumber returns a string containing the concatenation of the
+// numbers identifying a Section.
+
+* func (s Section) TemplateName() string { return "section" }
+
+- No comments
+
+* func renderElem(t *template.Template, e Elem) (template.HTML, error) {
+
+
+// renderElem implements the elem template function, used to render
+// sub-templates.
+
+* func execTemplate(t *template.Template, name string, data interface{}) (template.HTML, error) {
+
+
+// execTemplate is a helper to execute a template and return the output as a
+// template.HTML value.
+
+* func (t Text) TemplateName() string { return "text" }
+
+- No comments
+
+* func (l List) TemplateName() string { return "list" }
+
+- No comments
+
+* func readLines3(w http.ResponseWriter, r *http.Request, blobkey, DESKTOP, SID string, OnOffLine, AUTHOR string) (string, *Lines, error) {
+
+
+//reads the given SID content and parse them line by line
+//used for rending slides or articles
+
+* func readLines4(w http.ResponseWriter, r *http.Request, blobkey string) (string, *Lines, error) {
+
+
+//reads te content of a given blobKey
+//used for rendering slides or articles
+
+* func getBlobText(w http.ResponseWriter, r *http.Request, blobkey string) (blobText string) {
+
+
+//gets the contents of a given blobkey
+//#GET_REMOTE_DATA
+//#APPEND_URL_DATA
+//#APPEND_LOCAL_DATA
+
+* func getBlobTextNoComms(w http.ResponseWriter, r *http.Request, blobkey string) (blobText string) {
+
+
+//gets the contents of a given blobkey
+//no checks of special keywords
+
+* func getBlobTextChan(w http.ResponseWriter, r *http.Request, blobChan chan string, blobkey string){
+
+
+//gets content of a given blobkey and return data to channel
+
+* func getBlobTextPremiumCost(w http.ResponseWriter, r *http.Request, BLOB_KEY string) (premCost string) {
+
+
+//gets contents of a blobkey and parse to get the premium cost custom for the content
+
+* func getBlobTextQuiz(w http.ResponseWriter, r *http.Request, SID, DATA string) (res string, pass bool, TITLE string, err error) {
+
+
+//process quiz submit button
+
+* func getBlobTextPremiumPreview(w http.ResponseWriter, r *http.Request, BLOB_KEY string) (preview string) {
+
+
+//gets the contents of blobkey as preview
+
+* func getBlobByte(w http.ResponseWriter, r *http.Request, blobkey string) (blobByte []byte) {
+
+
+//gets the bytes contents of a blobkey
+
+* func getBlobByteChan(w http.ResponseWriter, r *http.Request, blobChan chan []byte, blobkey string) {
+
+
+//gets the bytes contents of a blobkey and return data to channel
+
+* func (l *Lines) next() (text string, ok bool) {
+
+
+ //reads next line
+
+* func (l *Lines) back() {
+
+
+//go back to previous line
+
+* func (l *Lines) nextNonEmpty() (text string, ok bool) {
+
+- No comments
+
+* func Parse3(w http.ResponseWriter, r *http.Request, blobkey string, name string, mode ParseMode, DESKTOP, SID string, OnOffLine, AUTHOR, PUB_STAT, FL_SHARED string) (string, *Doc, error) {
+
+
+//parses the given SID and returns the parsed document
+//used for rendering slides and articles
+
+* func Parse4(w http.ResponseWriter, r *http.Request, lines *Lines, name string, mode ParseMode) (*Doc, error) {
+
+
+//parses the given lines of text and returns the document
+
+* func lesserHeading(text, prefix string) bool {
+
+
+// lesserHeading returns true if text is a heading of a lesser or equal level
+// than that denoted by prefix.
+
+* func parseSections3(w http.ResponseWriter, r *http.Request, name string, lines *Lines, number []int, doc *Doc) ([]Section, []string, error) {
+
+
+// parseSections parses Sections from lines for the section level indicated by
+// number (a nil number indicates the top level).
+
+* func parseHeader(w http.ResponseWriter, r *http.Request, doc *Doc, lines *Lines, SID, PUB_STAT, FL_SHARED string) error {
+
+
+//parses the header lines of an article or slide
+
+* func getSocStats(w http.ResponseWriter, r *http.Request, thisChan chan string, thisChanDone chan bool, SID string) {
+
+
+//Get views/likes/comments stas for the given SID
+
+* func getSocComStat(w http.ResponseWriter, r *http.Request, thisChan chan string, thisChanDone chan bool, SID string) {
+
+
+//D0040
+//gets social comments status
+
+* func parseAuthors(lines *Lines) (authors []Author, err error) {
+
+
+//parses author lines of a slide or article
+
+* func parseURL(text string) Elem {
+
+
+//parses url from a given text
+
+* func parseTime(text string) (t time.Time, ok bool) {
+
+
+//parses time from a given text
+
+* func (l Link) TemplateName() string { return "link" }
+
+
+//a link template
+
+* func parseLink(w http.ResponseWriter, r *http.Request, fileName string, lineno int, text string) (Elem, error) {
+
+
+//parses a given link and return the html element
+
+* func (b Checkbox) TemplateName() string { return "checkbox" }
+
+
+//check box template
+
+* func parseCheckbox(w http.ResponseWriter, r *http.Request, fileName string, lineno int, text string) (Elem, error) {
+
+
+//parses a given checkbox and return the html element
+
+* func (b Radio) TemplateName() string { return "radio" }
+
+
+//a radio template
+
+* func parseRadio(w http.ResponseWriter, r *http.Request, fileName string, lineno int, text string) (Elem, error) {
+
+
+//parses a given radio and return the html element
+
+* func (b Input) TemplateName() string { return "input" }
+
+
+//input text box template
+
+* func parseInput(w http.ResponseWriter, r *http.Request, fileName string, lineno int, text string) (Elem, error) {
+
+
+//parses a given input box and return the html element
+
+* func (b Submit) TemplateName() string { return "submit" }
+
+
+//a submit button template
+
+* func parseSubmit(w http.ResponseWriter, r *http.Request, fileName string, lineno int, text string) (Elem, error) {
+
+
+//parses a given submit button and return the html element
+
+* func renderLink(href, text string) string {
+
+
+//redners a link html tags
+
+* func parseInlineLink(s string) (link string, length int) {
+
+
+// parseInlineLink parses an inline link at the start of s, and returns
+// a rendered HTML link and the total length of the raw inline link.
+// If no inline link is present, it returns all zeroes.
+
+* func (i Iframe) TemplateName() string { return "iframe" }
+
+
+//handles iframe template
+
+* func parseIframe(w http.ResponseWriter, r *http.Request, fileName string, lineno int, text string) (Elem, error) {
+
+
+//parses a given iframe and return html element
+
+* func (c Caption) TemplateName() string { return "caption" }
+
+
+//caption template
+
+* func parseCaption(w http.ResponseWriter, r *http.Request, _ string, _ int, text string) (Elem, error) {
+
+
+//parses a given caption and return html element
+
+* func (c Blockquote) TemplateName() string { return "blockquote" }
+
+
+//blockquote template
+
+* func parseBlockquote(w http.ResponseWriter, r *http.Request, _ string, _ int, text string) (Elem, error) {
+
+
+//parses a given blockquote and return html element
+
+* func (c Anchor) TemplateName() string { return "anchor" }
+
+
+//anchor template
+
+* func parseAnchor(w http.ResponseWriter, r *http.Request, _ string, _ int, text string) (Elem, error) {
+
+
+//parses a given anchor and return html element
+
+* func (c OpenLink) TemplateName() string { return "open" }
+
+
+//D0052
+//open url template
+
+* func parseOpen(w http.ResponseWriter, r *http.Request, _ string, _ int, text string) (Elem, error) {
+
+
+//D0052
+//parses a given url to open as new window
+
+* func (i Image) TemplateName() string { return "image" }
+
+
+//image template
+
+* func parseImage(w http.ResponseWriter, r *http.Request, fileName string, lineno int, text string) (Elem, error) {
+
+
+//parses a given image and return html element
+
+* func (c Code) TemplateName() string { return "code" }
+
+
+//code template
+
+* func parseCode(w http.ResponseWriter, r *http.Request, sourceFile string, sourceLine int, cmd string) (Elem, error) {
+
+
+// parseCode parses a code present directive. Its syntax:
+//   .code [-numbers] [-edit] <filename> [address] [highlight]
+// The directive may also be ".play" if the snippet is executable.
+
+* func readBlobText(w http.ResponseWriter, r *http.Request, mediaID int) (bText []byte, err2 error) {
+
+
+//reads a content of a given media ID
+//return the bytes of that content
+
+* func formatLines(lines []codeLine, highlight string) []codeLine {
+
+
+// formatLines returns a new slice of codeLine with the given lines
+// replacing tabs with spaces and adding highlighting where needed.
+
+* func rawCode(lines []codeLine) []byte {
+
+
+// rawCode returns the code represented by the given codeLines without any kind
+// of formatting.
+
+* func codeLines(src []byte, start, end int) (lines []codeLine) {
+
+
+// codeLines takes a source file and returns the lines that
+// span the byte range specified by start and end.
+// It discards lines that end in "OMIT".
+
+* func parseArgs(name string, line int, args []string) (res []interface{}, err error) {
+
+
+//parses given arguments
+
+* func parseArg(arg interface{}, max int) (ival int, sval string, isInt bool, err error) {
+
+
+// parseArg returns the integer or string value of the argument and tells which it is.
+
+* func match(file string, start int, lines []string, pattern string) (int, error) {
+
+
+// match identifies the input line that matches the pattern in a code invocation.
+// If start>0, match lines starting there rather than at the beginning.
+// The return value is 1-indexed.
+
+* func Style(s string) template.HTML {
+
+
+// Style returns s with HTML entities escaped and font indicators turned into
+// HTML font tags.
+
+* func font(s string) string {
+
+
+// font returns s with font indicators turned into HTML font tags.
+
+* func split(s string) []string {
+
+
+// split is like strings.Fields but also returns the runs of spaces
+// and treats inline links as distinct words.
+
+* func addrToByteRange(addr string, start int, data []byte) (lo, hi int, err error) {
+
+
+// addrToByte evaluates the given address starting at offset start in data.
+// It returns the lo and hi byte offset of the matched region within data.
+
+* func addrNumber(data []byte, lo, hi int, dir byte, n int, charOffset bool) (int, int, error) {
+
+
+// addrNumber applies the given dir, n, and charOffset to the address lo, hi.
+
+* func addrRegexp(data []byte, lo, hi int, dir byte, pattern string) (int, int, error) {
+
+
+// addrRegexp searches for pattern in the given direction starting at lo, hi.
+// The direction dir is '+' (search forward from hi) or '-' (search backward from lo).
+// Backward searches are unimplemented.
+
+* func parseHTML(w http.ResponseWriter, r *http.Request, fileName string, lineno int, text string) (Elem, error) {
+
+
+//parses an html string and returns elements
+
+* func (s HTML) TemplateName() string { return "html" }
+
+
+//html template
+
+* func randNum(min, max int) int {
+
+
+//generates a random number given start and end ranges
+
+* func randSeq(n int) string {
+
+
+//generate random password given a desired length
+
+* func randSeq2(n int) string {
+
+
+//generate random presenter uid
+
+* func randSeqM(n int) string {
+
+
+//generate random map randomizer
+
+* func API_utube(w http.ResponseWriter, r *http.Request) {
+
+
+/////////////////////////////////////////
+//integration with the Youtube API
+//can search and play Youtube inside UWM desktop via iframes
+//no need to go directly to Youtube website
+
+* func API_gsearch(w http.ResponseWriter, r *http.Request) {
+
+
+//Google Search API (for overall content search of Google data)
+// Search sends query to Google search and returns the results.
+
+* func httpDo(r *http.Request, ctx context.Context, req *http.Request, f func(*http.Response, error) error) error {
+
+
+// httpDo issues the HTTP request and calls f with the response. If ctx.Done is
+// closed while the request or f is running, httpDo cancels the request, waits
+// for f to exit, and returns ctx.Err. Otherwise, httpDo returns f's error.
+
+* func handlerGaeAdminCallback(w http.ResponseWriter, r *http.Request) {
+
+
+//D0044
+//handles automated installer of ulapph cloud desktop
+//handles callbacks and displays installer page
+
+* func handlerOuath2GoogleCallback(w http.ResponseWriter, r *http.Request) {
+
+
+//D0033
+//handles Google call backs after an API call using Oauth2
+
+* func handlerOuath2GithubCallback(w http.ResponseWriter, r *http.Request) {
+
+
+//D0033
+//handles Oauth2 callback from Github
+
+* func ShortenUrl(w http.ResponseWriter, r *http.Request, longUrl string) (shortenUrl string) {
+
+
+//Url Shortener
+//shortens a URL based on Google url shortener service
+//an integration with the Google Shortner API
+
+* func getGaeLatLon(w http.ResponseWriter, r *http.Request) string {
+
+
+//D0040
+//gets the GAE given longitude and latitude
+
+* func ulapphGPS(w http.ResponseWriter, r *http.Request) {
+
+
+// GPS Tracker
+//tracks the GPS locations
+
+* func (d datapoint) MarshalJSON() ([]byte, error) {
+
+
+//marshal json and return the datapoints
+//used for GPS tracking
+
+* func createdatapoint(lat float64, lon float64, time string) datapoint {
+
+
+//creates data points for gps tracking
+
+* func ulapphBible(w http.ResponseWriter, r *http.Request) {
+
+
+//Bible Randomizer
+//randomly outputs Bible verses
+
+* func min(a, b int) int {
+
+
+//semaphore for determining minimum
+
+* func encrypter(w http.ResponseWriter, r *http.Request, SID, ENCRYPTION_KEY string) (encStr []byte) {
+
+
+//encrypter
+//encrypts a given SID and an encryption key
+
+* func decrypter(w http.ResponseWriter, r *http.Request, SID, ENCRYPTION_KEY string) (decStr []byte) {
+
+
+//decrypter
+//decrypts a SID given an encryption key
+
+* func isEncrypted(w http.ResponseWriter, r *http.Request, SID string) (FL_ENC bool) {
+
+
+//isEncrypted checks if a media/slide/article is encrypted
+
+* func deleteSearchIndex(w http.ResponseWriter, r *http.Request, idx, idxKey string) {
+
+
+//delete search index once encrypted
+
+* func encrypter2(w http.ResponseWriter, r *http.Request, TEXT, ENCRYPTION_KEY string) (encStr []byte) {
+
+
+//encrypter
+//encrypts a given text and an encryption key
+
+* func decrypter2(w http.ResponseWriter, r *http.Request, TEXT, ENCRYPTION_KEY string) (decStr []byte) {
+
+
+//decrypter
+//decrypts a given text and an decryption key
+
+* func getUpUrlString(w http.ResponseWriter, r *http.Request, tpath string) (ustr string) {
+
+
+//gets the upload string
+
+* func getScheme(w http.ResponseWriter, r *http.Request) (scheme string) {
+
+
+//gets the current scheme if http or https					
+
+* func getSchemeUrl(w http.ResponseWriter, r *http.Request) (scheme string) {
+
+
+//gets the complete scheme url
+
+* func getSchemeNewUrl(w http.ResponseWriter, r *http.Request, turl string) (url string) {
+
+
+//gets the new scheme url
+
+* func checkHTTPS(w http.ResponseWriter, r *http.Request) {
+
+
+//checks if the request is https or not
+
+* func checkHTTPS2(w http.ResponseWriter, r *http.Request) {
+
+
+//checks the request if https or not
+
+* func warnSecurityIssue(w http.ResponseWriter, r *http.Request, uid string) {
+
+
+//display list of files tagged as decrypted
+
+* func IsBase64(s string) bool {
+
+
+//checks if string is base64 encoded
+
+* func contentCheckSid(w http.ResponseWriter, r *http.Request, sid string) (blobKey string) {
+
+
+//checks content of SID and perform security validations before a blobkey is returned
+
+* func downloadArticle(w http.ResponseWriter, r *http.Request, sid string) string {
+
+
+//downloads an article
+//used for local storage where it saves local contents in browser
+
+* func downloadSlide(w http.ResponseWriter, r *http.Request, sid string) string {
+
+
+//downloads a slide
+//used for local storage where it saves local contents in browser
+
+* func createClient(context appengine.Context, t time.Duration) *http.Client {
+
+
+//creates a http client with timeouts
+
+* func ulapphTodos(w http.ResponseWriter, r *http.Request) {
+
+
+//D0029
+//Todos manager handler for /todos
+//user can create and manage TODOs using the AngularJS interface
+
+* func handleTodos(c appengine.Context, r *http.Request, uid string) (interface{}, error) {
+
+
+//handles TODOs processing
+
+* func defaultTodoList(c appengine.Context, uid string) *datastore.Key {
+
+
+//retrieves default todo list
+
+* func (t *Todo) key(c appengine.Context, uid string) *datastore.Key {
+
+
+//gets the key for a todo item
+
+* func (t *Todo) save(c appengine.Context,uid string) (*Todo, error) {
+
+
+//saves the details of a todo item
+
+* func decodeTodo(r io.ReadCloser) (*Todo, error) {
+
+
+//decode a todo data
+
+* func getAllTodos(c appengine.Context, uid string) ([]Todo, error) {
+
+
+//gets all todos
+
+* func deleteDoneTodos(c appengine.Context, uid string) error {
+
+
+//deletes done todos
+
+* func removeDuplicates(elements []string) []string {
+
+
+//D0042
+//remove duplicates from an array of string
+
+* func get_words_from(text string) []string{
+
+
+//sort array map
+
+* func count_words (words []string) map[string]int{
+
+
+//sort and count words in a given array of strings
+
+* func display_music_tags (w http.ResponseWriter, r *http.Request, uid string, word_counts map[string]int){
+
+
+//sort and display music tages given a list of keywords
+
+* /* func display_photo_tags (w http.ResponseWriter, r *http.Request, uid string, opt string, word_counts map[string]int){
+
+
+//sort and display music tages given a list of keywords
+
+* func syncGoogleDrive(w http.ResponseWriter, r *http.Request, uid string) {
+
+
+//D0033
+//sync with Google drive contents
+
+* func updateGithubContent(w http.ResponseWriter, r *http.Request, guid,gbra,grepo,gpath,gsha,gsha2,blobKey,msg string) (err error) {
+
+
+//D0033
+//updates a github content or repo
+
+* func getGithubContent(w http.ResponseWriter, r *http.Request, bra,repo,opath,sha,sha2 string) {
+
+
+//D0033
+//gets a github repo content
+
+* func getGithubTree(w http.ResponseWriter, r *http.Request, bra, repo, sha string) {
+
+
+//D0033
+//gets a github tree
+
+* func getGithubUser(w http.ResponseWriter, r *http.Request) (DEFAULT_GITHUB_USER string, err error) {
+
+
+//D0033
+//gets a github user
+
+* func getGithubBranches(w http.ResponseWriter, r *http.Request, repo string) {
+
+
+//D0033
+//gets a github branch
+
+* func syncGithubDrive(w http.ResponseWriter, r *http.Request, uid string) {
+
+
+//D0033
+//sync to a github repo owned by user
+
+* func oauth2GaeAdminCall(w http.ResponseWriter, r *http.Request, target string) {
+
+
+//D0044
+//google admin callback
+
+* func oauth2GoogleCall(w http.ResponseWriter, r *http.Request, uid, target string) {
+
+
+//D0033
+//gogole oauth2 callback
+
+* func oauth2GithubCall(w http.ResponseWriter, r *http.Request, uid, target string) {
+
+
+//D0033
+//oauth2 github callback
+
+* func str2int(a string) (i int) {
+
+
+//converts string to integer
+
+* func createComment(w http.ResponseWriter, r *http.Request, url, name, uid, comment, latlon string, parent int) error {
+
+
+//D0040
+//creates a new comment entry
+
+* func getComments(w http.ResponseWriter, r *http.Request, SID, url string) ([]Comment, error) {
+
+
+//D0040
+// put a table data into array of structs
+
+* func (res *resultContainer) render(w http.ResponseWriter) {
+
+
+//D0040
+//render comments in a container
