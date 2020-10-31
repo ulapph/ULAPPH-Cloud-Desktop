@@ -11,8 +11,5 @@ ULAPPH Homepage
 
 ULAPPH Download Source Codes
 ----------------
-* https://github.com/Accenture/ULAPPH-Cloud-Desktop
+* https://github.com/edwindvinas/ULAPPH-Cloud-Desktop
 
-ULAPPH Documentation
-----------------
-* https://github.com/edwindvinas/ULAPPH-Cloud-Desktop/
